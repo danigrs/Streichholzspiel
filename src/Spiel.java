@@ -1,6 +1,7 @@
 public class Spiel {
-    int anzahl;
-    int[] streichhoelzer = new int[3];
+    private int anzahl;
+
+    private int[] streichhoelzer = new int[3];
     
     public Spiel(int anzahl){
         this.anzahl = anzahl;
@@ -13,6 +14,10 @@ public class Spiel {
                 anzahl--;
             }
         }
+    }
+
+    public int getAnzahl() {
+        return anzahl;
     }
 
     public void computerZiehen(){
