@@ -34,7 +34,7 @@ public class Ausgabe {
     }
 
     public static void zugNichtMoeglich(){
-        System.out.println("Zug nicht möglich, da zu wenig Streichhölzer auf dem tisch liegen.");
+        System.out.println("Zug nicht möglich, da zu wenig Streichhölzer auf dem Tisch liegen.");
     }
 
     public static void spielStand(int anzahl){

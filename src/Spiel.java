@@ -5,13 +5,20 @@ public class Spiel {
     
     public Spiel(int anzahl){
         this.anzahl = anzahl;
-        while (anzahl != 0){
-            if (anzahl % 2 == 0){
+        loop:
+        while (this.anzahl >= 0){
+            if (this.anzahl % 2 == 0){
                 computerZiehen();
-                anzahl--;
+                if (this.anzahl <= 0){
+                    Ausgabe.menschGewinnt();
+                    break;
+                }
             } else {
                 menschZiehen();
-                anzahl--;
+                if (this.anzahl <= 0){
+                    Ausgabe.computerGewinnt();
+                    break;
+                }
             }
         }
     }
@@ -21,15 +28,24 @@ public class Spiel {
     }
 
     public void computerZiehen(){
-
+        int anzahlGezogeneHoelzer = berechneComputerZug();
+        anzahl = anzahl - anzahlGezogeneHoelzer;
+        Ausgabe.computerZug(anzahlGezogeneHoelzer, anzahl);
     }
 
     public void menschZiehen(){
-
+        int anzahlGezogeneHoelzer = Eingabe.leseHoelzer();
+        if (anzahlGezogeneHoelzer > anzahl){
+            Ausgabe.zugNichtMoeglich();
+            menschZiehen();
+        } else {
+            anzahl = anzahl - anzahlGezogeneHoelzer;
+            Ausgabe.menschZug(anzahlGezogeneHoelzer, anzahl);
+        }
     }
 
-    private void berechneComputerZug(){
-
+    public int berechneComputerZug(){
+        return 1;
     }
 
 }

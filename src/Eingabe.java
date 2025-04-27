@@ -20,10 +20,11 @@ public class Eingabe {
     }
 
     public static int leseHoelzer(){
-        if (leseZahl() > 3 || leseZahl() < 1){
+        int zahl = leseZahl();
+        if (zahl > 3 || zahl < 1){
             Ausgabe.zahlNichtImBereich();
-            return leseZahl();
+            leseHoelzer();
         }
-        return leseZahl();
+        return zahl;
     }
 }
