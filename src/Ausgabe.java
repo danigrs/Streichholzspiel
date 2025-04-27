@@ -3,32 +3,26 @@ import java.util.Scanner;
 public class Ausgabe {
 
     public static void zahlEingeben() {
-        Scanner scanner = new Scanner(System.in);
-        keineZahl(scanner);
+        System.out.print("Bitte eine ganze Zahl eingeben: ");
+        // Scanner scanner = new Scanner(System.in);
+        // int zahl = 0;
+
+        // try {
+        //     String eingabe = scanner.nextLine(); // Eingabe lesen
+        //     zahl = Integer.parseInt(eingabe);   // Eingabe in Zahl umwandeln
+        //     zahlNichtImBereich(zahl);          // Bereich prüfen
+        // } catch (NumberFormatException e) {
+        //     keineZahl(); // Bei ungültiger Eingabe erneut aufrufen
+        // }
     }
 
-    public static void keineZahl(Scanner eingabe){
-        int zahl = 0;
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.print("Bitte eine Zahl eingeben: ");
-            if (eingabe.hasNextInt()) {
-                zahl = eingabe.nextInt();
-                valid = true;
-                zahlNichtImBereich(zahl);
-            } else {
-                System.out.println("Ungültige Eingabe. Bitte eine ganze Zahl eingeben.");
-                eingabe.next(); // ungültige Eingabe verwerfen
-            }
-        }
+    public static void keineZahl(){
+        System.out.println("Ungültige Eingabe.");
+        Eingabe.leseZahl();
     }
 
-    public static void zahlNichtImBereich(int zahl){
-        if (zahl > 3 || zahl < 1){
-            System.out.println("Zahl im ungültigen Bereich. Bitte Zahl zwischen 1 & 3 wählen.");
-            zahlEingeben();
-        }
+    public static void zahlNichtImBereich(){
+        System.out.println("Zahl im ungültigen Bereich. Bitte Zahl zwischen 1 & 3 wählen.");
     }
 
     public static void menschGewinnt(){

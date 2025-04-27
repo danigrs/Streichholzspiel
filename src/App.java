@@ -1,9 +1,9 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        // Spiel spiel = new Spiel(10);
+        Spiel spiel = new Spiel(18);
         // Ausgabe.menschZug(2, 15);
         // Ausgabe.computerZug(2, 15);
         // Ausgabe.zahlEingeben();
+        // Eingabe.leseZahl();
     }
 }
