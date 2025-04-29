@@ -11,9 +11,9 @@ public class Eingabe {
         try {
             String eingabe = scanner.nextLine(); // Eingabe lesen
             zahl = Integer.parseInt(eingabe);   // Eingabe in Zahl umwandeln
-            // Ausgabe.zahlNichtImBereich(zahl);          // Bereich prüfen
         } catch (NumberFormatException e) {
-            Ausgabe.keineZahl(); // Bei ungültiger Eingabe erneut aufrufen
+            Ausgabe.keineZahl();
+            return leseHoelzer();
         }
        
         return zahl;

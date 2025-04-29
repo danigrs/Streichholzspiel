@@ -1,24 +1,11 @@
-import java.util.Scanner;
-
 public class Ausgabe {
 
     public static void zahlEingeben() {
         System.out.print("Bitte eine ganze Zahl eingeben: ");
-        // Scanner scanner = new Scanner(System.in);
-        // int zahl = 0;
-
-        // try {
-        //     String eingabe = scanner.nextLine(); // Eingabe lesen
-        //     zahl = Integer.parseInt(eingabe);   // Eingabe in Zahl umwandeln
-        //     zahlNichtImBereich(zahl);          // Bereich prüfen
-        // } catch (NumberFormatException e) {
-        //     keineZahl(); // Bei ungültiger Eingabe erneut aufrufen
-        // }
     }
 
     public static void keineZahl(){
         System.out.println("Ungültige Eingabe.");
-        Eingabe.leseZahl();
     }
 
     public static void zahlNichtImBereich(){

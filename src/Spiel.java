@@ -2,8 +2,6 @@ import java.util.Random;
 
 public class Spiel {
     private int anzahl;
-
-    private int[] streichhoelzer = new int[3];
     
     public Spiel(int anzahl){
         this.anzahl = anzahl;
