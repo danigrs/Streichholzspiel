@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Spiel {
     private int anzahl;
 
@@ -5,18 +7,32 @@ public class Spiel {
     
     public Spiel(int anzahl){
         this.anzahl = anzahl;
-        loop:
-        while (this.anzahl >= 0){
-            if (this.anzahl % 2 == 0){
+        Random random = new Random();
+        int zufallszahl = random.nextInt(2) + 1;
+
+        if (zufallszahl % 2 == 0){
+            while (this.anzahl >= 0) {
                 computerZiehen();
                 if (this.anzahl <= 0){
                     Ausgabe.menschGewinnt();
                     break;
                 }
-            } else {
                 menschZiehen();
                 if (this.anzahl <= 0){
                     Ausgabe.computerGewinnt();
+                    break;
+                }
+            }
+        } else {
+            while (this.anzahl >= 0) {
+                menschZiehen();
+                if (this.anzahl <= 0){
+                    Ausgabe.computerGewinnt();
+                    break;
+                }
+                computerZiehen();
+                if (this.anzahl <= 0){
+                    Ausgabe.menschGewinnt();
                     break;
                 }
             }
@@ -45,7 +61,10 @@ public class Spiel {
     }
 
     public int berechneComputerZug(){
-        return 1;
+        Random random = new Random();
+        int zufallszahl = random.nextInt(3) + 1;
+
+        return zufallszahl;
     }
 
 }
